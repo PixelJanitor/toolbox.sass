@@ -1,0 +1,49 @@
+// @extend example
+
+// %button
+//   font-size: 12px
+//   color: white
+//   padding: 6px
+//   border-radius: 2px
+//   box-shadow: 0px 0px 0px 1px white
+
+*
+  +box-sizing(border-box)
+
+=tappable-area($additional-size)
+  +box-sizing(content-box)
+  padding: $additional-size
+  margin: -$additional-size
+
+=word-wrap()
+  word-break: break-word
+  -webkit-hyphens: auto
+  -moz-hyphens: auto
+  hyphens: auto
+
+=ellipsis()
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+
+=coverer
+  +position(absolute, 0px null null 0px)
+  +size(100%)
+
+=vertical-align($position: absolute)
+  +position($position, 50% null null null)
+  +transform(translate(0, -50%))
+
+=horizontal-align($position: absolute)
+  +position($position, null null null 50%)
+  +transform(translate(-50%, 0))
+
+=centerer
+  +position(absolute, 50% null null 50%)
+  +transform(translate(-50%, -50%))
+
+@function black($opacity)
+  @return rgba(black, $opacity)
+
+@function white($opacity)
+  @return rgba(white, $opacity)
